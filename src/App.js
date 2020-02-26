@@ -94,7 +94,6 @@ const Game = props => {
         ? candidateNums.concat(number)
         : candidateNums.filter(n => !n);
 
-    console.log(candidateNums);
     setGameState(newCandidateNums);
   };
 
@@ -152,7 +151,9 @@ const PlayAgain = props => (
   <div className="game-done">
     <div
       className="message"
-      style={{ color: props.gameStatus === "lost" ? "red" : "green" }}
+      style={{
+        color: props.gameStatus === "lost" ? colors.wrong : colors.used
+      }}
     >
       {props.gameStatus === "lost" ? "You lost" : "You won"}
     </div>
@@ -164,7 +165,7 @@ const PlayAgain = props => (
 const colors = {
   available: "lightgray",
   used: "#AEEA00",
-  wrong: "#F44336ssssss",
+  wrong: "#F44336",
   candidate: "deepskyblue"
 };
 
