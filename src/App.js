@@ -36,7 +36,8 @@ const useGameState = () => {
       }, 1000);
       return () => clearTimeout(timerId);
     }
-  }, [secondsLeft, availableNums]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [secondsLeft]);
 
   // Conditional to check if the sum of newCandidateNums is different to the total of stars
   // Y - We set our newCandidateNums to the state of candidateNums
